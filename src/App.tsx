@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import {FlexColumn} from "./components/shared/Flex";
-import {Auth} from "./components/static/auth/Auth";
+import {RouterProvider} from "react-router-dom";
+import {router} from "./router";
 
 function App() {
   return (
     <FlexColumn className="App">
-      <Auth />
-
+        <RouterProvider router={router} />
     </FlexColumn>
   );
 }

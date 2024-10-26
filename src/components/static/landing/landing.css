@@ -1,0 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+.landing > .link {
+    color: blue;
+    text-decoration: none;
+}
