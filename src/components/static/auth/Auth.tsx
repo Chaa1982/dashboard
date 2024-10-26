@@ -1,19 +1,22 @@
 import {FlexColumn} from "../../shared/Flex";
 import './auth.css';
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {IUser} from "../../../types";
 import {useLocalStorage} from "../../../hooks/useLocalStorage";
 import {useNavigate} from "react-router-dom";
+import {DashboardContext, DashboardContextProvider} from "../../../contexts/DashboardContext";
 
 export const Auth = () => {
     const [formData, setFormData] = useState<IUser>({email: "", password: ""});
     const [_, setLocalStorageFormData] = useLocalStorage('userData');
     const navigate = useNavigate();
+    const {setUser} = useContext(DashboardContext)!;
 
 
     const onSubmit = () => {
         if(formData.email.trim() !== "" && formData.password.trim() !== "") {
             setLocalStorageFormData(formData);
+
         } else {
             navigate("/");
             return;
@@ -21,6 +24,7 @@ export const Auth = () => {
 
         //it's test because I don't have DB
         if (formData.email === "ch@i.ua" && formData.password === "admin") {
+            setUser(formData);
             navigate("/dashboard");
         } else {
             alert('WRONG DATA');
