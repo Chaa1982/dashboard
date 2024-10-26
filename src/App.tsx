@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import {FlexColumn, FlexRow} from "./components/shared/Flex";
+import {FlexColumn} from "./components/shared/Flex";
+import {Auth} from "./components/static/auth/Auth";
 
 function App() {
   return (
-    <FlexRow className="App">
-      <h1>Hello</h1>
-        <h2>World!</h2>
+    <FlexColumn className="App">
+      <Auth />
 
-    </FlexRow>
+    </FlexColumn>
   );
 }
 

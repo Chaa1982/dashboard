@@ -1,3 +1,4 @@
-export interface Types {
-
+export interface IUser {
+    email: string;
+    password: string;
 };

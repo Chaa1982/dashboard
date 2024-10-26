@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 interface FlexProps {
+    width?: string;
+    height?: string;
     margin?: string;
     padding?: string;
     justifyContent?: string;
@@ -13,6 +15,8 @@ interface FlexProps {
 const Flex = styled('div')<FlexProps>`
     display: flex;
     
+    width: ${(props) => props.width || "auto"};
+    height: ${(props) => props.height || "auto"};
     margin: ${(props) => props.margin || '0'};
     padding: ${(props) => props.padding || '0'};
     justify-content: ${(props) => props.justifyContent || 'flex-start'};
