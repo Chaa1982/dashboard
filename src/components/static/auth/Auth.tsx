@@ -2,9 +2,19 @@ import {FlexColumn} from "../../shared/Flex";
 import './auth.css';
 import {useState} from "react";
 import {IUser} from "../../../types";
+import {useLocalStorage} from "../../../hooks/useLocalStorage";
 
 export const Auth = () => {
     const [formData, setFormData] = useState<IUser>({email: "", password: ""});
+    const [_, setLocalStorageFormData] = useLocalStorage('userData');
+
+
+    const onSubmit = () => {
+        if(formData.email !== "" && formData.password !== "" ) {
+            setLocalStorageFormData(formData);
+        }
+        setFormData({email: '', password: ''});
+    }
 
     return (
         <FlexColumn className={'auth'} width="100%" height={'100vh'} justifyContent={'center'} alignItems="center" background={'silver'}>
@@ -21,7 +31,7 @@ export const Auth = () => {
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
             />
-            <button>Submit</button>
+            <button onClick={onSubmit}>Submit</button>
         </FlexColumn>
     );
 }
