@@ -14,16 +14,9 @@ export const Auth = () => {
 
 
     const onSubmit = () => {
-        if(formData.email.trim() !== "" && formData.password.trim() !== "") {
-            setLocalStorageFormData(formData);
-
-        } else {
-            navigate("/");
-            return;
-        }
-
         //it's test because I don't have DB
         if (formData.email === "ch@i.ua" && formData.password === "admin") {
+            setLocalStorageFormData(formData);
             setUser(formData);
             navigate("/dashboard");
         } else {
