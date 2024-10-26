@@ -3,6 +3,7 @@ import {Auth} from "./components/static/auth/Auth";
 import {Landing} from "./components/static/landing/Landing";
 import {Dashboard} from "./components/static/dashboard/Dashboard";
 import {PrivateRouter} from "./components/shared/PrivateRouter";
+import {Settings} from "./components/static/setings/Settings";
 
 export const router = createBrowserRouter([
     {
@@ -16,9 +17,13 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: (
-            <PrivateRouter fallback={'/'}>
+            <PrivateRouter fallback={'/auth'}>
                 <Dashboard />
             </PrivateRouter>
         )
+    },
+    {
+        path: "/dashboard/settings",
+        element: <Settings />
     },
 ])
