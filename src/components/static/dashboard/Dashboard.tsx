@@ -27,8 +27,8 @@ export const Dashboard: FC = () => {
                 background={'grey'}
                 gap={'20px'}
                 padding={'10px'}>
-                {dashboardLinks.map((el) =>
-                    <StyledLink className={'link'} to={el.link}>{el.text}</StyledLink>)}
+                {dashboardLinks.map((el, i) =>
+                    <StyledLink className={'link'} to={el.link} key={`${i}-dashboard`}>{el.text} </StyledLink>)}
             </FlexRow>
             <h1>DASHBOARD! Hello, {user?.email}</h1>
             <Outlet/>

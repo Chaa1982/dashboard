@@ -1,20 +1,21 @@
+import React, { useMemo } from "react";
 import {useFetchData} from "../../hooks/useFetchData";
 import {IDashboardUser} from "./types";
 import {FlexColumn} from "../shared/Flex";
 import {UserItem} from "./userItem/UserItem";
 
 export const UsersList = () => {
+    const options = useMemo(() => ({method: "GET"}), []);
+
     const {data, isLoading} = useFetchData<IDashboardUser[]>(
         'https://jsonplaceholder.typicode.com/users',
-        {method: 'GET'}
+        options
     );
-
-    console.log(isLoading, data);
 
     return (
         <FlexColumn width={'100%'} alignItems={'center'}>
             <h3>USERS</h3>
-            {data?.map((user) => <UserItem user={user} />)}
+            {data?.map((user, i) => <UserItem user={user} key={`${i}-user`}/>)}
         </FlexColumn>
     )
 }
