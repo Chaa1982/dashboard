@@ -11,7 +11,12 @@ export const Dashboard: FC = () => {
 
     // if(!user)  return <h1>Are you hacker?</h1>;
 
-    const dashboardLinks = [{link: 'users', text: 'Users'}, {link: 'settings', text: 'Settings'}];
+    const dashboardLinks = [
+        {link: 'users', text: 'Users'},
+        {link: 'posts', text: 'Posts'},
+        {link: 'settings', text: 'Settings'},
+
+    ];
 
     return (
         <FlexColumn className={'dashboard'} width={'100%'}>

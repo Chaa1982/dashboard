@@ -5,6 +5,7 @@ import {Dashboard} from "./components/static/dashboard/Dashboard";
 import {PrivateRouter} from "./components/shared/PrivateRouter";
 import {Settings} from "./components/static/setings/Settings";
 import {UsersList} from "./components/users/UsersList";
+import {PostsList} from "./components/posts/PostsList";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ export const router = createBrowserRouter([
             {
                 path: "users",
                 element: <UsersList />
+            },
+            {
+                path: "posts",
+                // eslint-disable-next-line react/jsx-no-undef
+                element: <PostsList />
             },
             {
                 path: "settings",
