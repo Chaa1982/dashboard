@@ -2,6 +2,7 @@ import React, {FC} from "react";
 import {FlexColumn} from "../../shared/Flex";
 import {IDashboardPost} from "../types";
 import './postItem.css';
+import {ContentWrapper} from "../../shared/Common";
 
 
 interface IProps {
@@ -11,14 +12,10 @@ interface IProps {
 export const PostItem: FC<IProps> = (props) => {
     const {title, body} = props.post;
     return (
-        <FlexColumn
-            width={'100%'}
-            background={'lightgrey'}
-            margin={'10px'}
-        >
-            <h4>{title}</h4>
+        <ContentWrapper flexDirection={'column'} alignItems={'flex-start'}>
+            <h3>{title.toUpperCase()}</h3>
             <p>{body}</p>
-        </FlexColumn>
+        </ContentWrapper>
 
     )
 }

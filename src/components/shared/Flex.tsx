@@ -11,9 +11,10 @@ interface FlexProps {
     fontSize?: string;
     background?: string;
     color?: string;
+    flexDirection?: string;
 }
 
-const Flex = styled('div')<FlexProps>`
+export const Flex = styled('div')<FlexProps>`
     display: flex;
     
     width: ${(props) => props.width || "auto"};
@@ -26,6 +27,7 @@ const Flex = styled('div')<FlexProps>`
     font-size: ${(props) => props.fontSize || 'inherit'};
     background: ${(props) => props.background || 'none'};
     color: ${(props) => props.color || 'black'};
+    flex-direction: ${(props) => props.flexDirection || 'row'};
 `;
 
 export const FlexColumn = styled(Flex)`

@@ -3,6 +3,7 @@ import {FlexColumn, FlexRow} from "../../shared/Flex";
 import {DashboardContext} from "../../../contexts/DashboardContext";
 import {Link, Outlet} from "react-router-dom";
 import './dashboard.css';
+import {StyledLink} from "../../shared/StyledLink";
 
 
 export const Dashboard: FC = () => {
@@ -24,12 +25,13 @@ export const Dashboard: FC = () => {
                 as={'header'}
                 width={'100%'}
                 background={'grey'}
-                gap={'10px'}
+                gap={'20px'}
                 padding={'10px'}>
-                {dashboardLinks.map((el) => <Link className={'link'} to={el.link}>{el.text}</Link>)}
+                {dashboardLinks.map((el) =>
+                    <StyledLink className={'link'} to={el.link}>{el.text}</StyledLink>)}
             </FlexRow>
             <h1>DASHBOARD! Hello, {user?.email}</h1>
-         <Outlet />
+            <Outlet/>
         </FlexColumn>
     )
 };
