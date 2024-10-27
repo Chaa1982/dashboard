@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 
-export const useFetchData = (url: string, options: RequestInit) => {
-    const [data, setData] = useState(null);
+export const useFetchData = <TData>(url: string, options: RequestInit) => {
+    const [data, setData] = useState<TData | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export const useFetchData = (url: string, options: RequestInit) => {
                 setIsLoading(false);
                 setData(null);
             })
-    }, [url, options]);
+    }, []);
 
     return {data, isLoading};
 }

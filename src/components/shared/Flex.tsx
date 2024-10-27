@@ -8,6 +8,7 @@ interface FlexProps {
     justifyContent?: string;
     alignItems?: string;
     gap?: string;
+    fontSize?: string;
     background?: string;
     color?: string;
 }
@@ -22,6 +23,7 @@ const Flex = styled('div')<FlexProps>`
     justify-content: ${(props) => props.justifyContent || 'flex-start'};
     align-items: ${(props) => props.alignItems || 'flex-start'};
     gap: ${(props) => props.gap || '0'};
+    font-size: ${(props) => props.fontSize || 'inherit'};
     background: ${(props) => props.background || 'none'};
     color: ${(props) => props.color || 'black'};
 `;

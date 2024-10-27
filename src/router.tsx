@@ -4,6 +4,7 @@ import {Landing} from "./components/static/landing/Landing";
 import {Dashboard} from "./components/static/dashboard/Dashboard";
 import {PrivateRouter} from "./components/shared/PrivateRouter";
 import {Settings} from "./components/static/setings/Settings";
+import {UsersList} from "./components/users/UsersList";
 
 export const router = createBrowserRouter([
     {
@@ -17,13 +18,20 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: (
-            <PrivateRouter fallback={'/auth'}>
+            // <PrivateRouter fallback={'/auth'}>
                 <Dashboard />
-            </PrivateRouter>
-        )
+            // </PrivateRouter>
+        ),
+        children: [
+            {
+                path: "users",
+                element: <UsersList />
+            },
+            {
+                path: "settings",
+                element: <Settings />
+            },
+        ]
     },
-    {
-        path: "/dashboard/settings",
-        element: <Settings />
-    },
+
 ])
