@@ -1,0 +1,11 @@
+.comments-btn {
+    padding: 5px 10px;
+    border-radius: 50px;
+    border: 1px solid transparent;
+
+
+}
+.comments-btn:hover {
+    border: 1px solid silver;
+    color: blue;
+}
