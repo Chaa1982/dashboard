@@ -5,6 +5,7 @@ import {ContentWrapper} from "../../shared/Common";
 import {useFetchData} from "../../../hooks/useFetchData";
 import {IDashboardUser} from "../../users/types";
 import {FlexRow} from "../../shared/Flex";
+import { FaUserTie } from "react-icons/fa6";
 
 
 interface IProps {
@@ -21,6 +22,7 @@ export const PostItem: FC<IProps> = (props) => {
     return (
         <ContentWrapper flexDirection={'column'} alignItems={'flex-start'}>
             <FlexRow alignItems={'center'} gap={'20px'}>
+                <FaUserTie />
                 <h4>{data?.username}</h4>
                 <span>{data?.email}</span>
             </FlexRow>
