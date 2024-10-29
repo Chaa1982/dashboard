@@ -1,7 +1,13 @@
 * {
     box-sizing: border-box;
+    font-size: 16px !important;
+    color: white;
 }
 .landing > .link {
     color: blue;
     text-decoration: none;
+}
+.scroll-pointer  {
+    width: 100%;
+    cursor: pointer;
 }

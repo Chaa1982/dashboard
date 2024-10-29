@@ -15,6 +15,7 @@ export const Dashboard: FC = () => {
     const dashboardLinks = [
         {link: 'users', text: 'Users'},
         {link: 'posts', text: 'Posts'},
+        {link: 'comments', text: 'Comments'},
         {link: 'settings', text: 'Settings'},
 
     ];

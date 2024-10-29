@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
+import {Link as ScrollLink} from 'react-use-scroll-to';
 
 
 export const StyledLink = styled(Link)`
@@ -14,4 +15,10 @@ export const StyledLink = styled(Link)`
         color: #f1e8aa;
         transform: scale(1.1);
     }
+`;
+
+export const StyledScrollLink = styled(ScrollLink)`
+    color: white;
+    font-size: 25px;
+    font-family: "Al Nile";
 `;
