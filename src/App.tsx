@@ -10,6 +10,7 @@ function App() {
     <FlexColumn className="App">
         <DashboardContextProvider>
             <RouterProvider router={router} />
+
         </DashboardContextProvider>
     </FlexColumn>
   );
