@@ -1,20 +1,24 @@
-import React, {FC, SyntheticEvent, useCallback, useState} from "react";
+import React, {FC, useCallback, useContext} from "react";
 import {FlexRow} from "../Flex";
 import { TiDelete } from "react-icons/ti";
 import './search.css';
+import {SearchContext} from "../../../contexts/SearchContext";
 
-export const Search: FC = (props: any) => {
-    const [value, setValue] = useState<string>("");
-    console.log('RENDER');
 
+interface IProps {
+
+}
+
+export const Search: FC<IProps> = (props: any) => {
+    const {value, setValue} = useContext(SearchContext)!;
     const onChange = useCallback((event: {target: {value: string}}) => {
             setValue(event.target.value);
 
-    }, []);
+    }, [setValue]);
 
     const onClear = useCallback(() => {
         setValue("");
-    }, [])
+    }, [setValue])
 
     return (
         <FlexRow

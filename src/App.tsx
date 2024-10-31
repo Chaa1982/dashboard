@@ -4,13 +4,17 @@ import {FlexColumn} from "./components/shared/Flex";
 import {RouterProvider} from "react-router-dom";
 import {router} from "./router";
 import {DashboardContextProvider} from "./contexts/DashboardContext";
+import {SearchContextProvider} from "./contexts/SearchContext";
 
 function App() {
   return (
     <FlexColumn className="App">
         <DashboardContextProvider>
-            <RouterProvider router={router} />
+            <SearchContextProvider>
 
+                <RouterProvider router={router} />
+
+            </SearchContextProvider>
         </DashboardContextProvider>
     </FlexColumn>
   );
